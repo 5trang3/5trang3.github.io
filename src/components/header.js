@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'gatsby';
 
 // Import icons:
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
@@ -24,19 +25,27 @@ export default () => {
   return (
     <AppBar>
       <Toolbar className={ classes.toolbar }>
-        <IconButton edge='start'>
-          <HomeOutlinedIcon/>
-        </IconButton>
+        <Link to='/'>
+          <IconButton edge='start'>
+            <HomeOutlinedIcon/>
+          </IconButton>
+        </Link>
         <div>
-          <IconButton>
-            <InfoOutlinedIcon/>
-          </IconButton>
-          <IconButton>
-            <WorkOutlineOutlinedIcon/>
-          </IconButton>
-          <IconButton>
-            <BookOutlinedIcon/>
-          </IconButton>
+          <Link to='/about/'>
+            <IconButton>
+              <InfoOutlinedIcon/>
+            </IconButton>
+          </Link>
+          <Link to='/skills/'>
+            <IconButton>
+              <WorkOutlineOutlinedIcon/>
+            </IconButton>
+          </Link>
+          <Link to='/showcase/'>
+            <IconButton>
+              <BookOutlinedIcon/>
+            </IconButton>
+          </Link>
         </div>
       </Toolbar>
     </AppBar>
