@@ -23,31 +23,34 @@ const useStyles = makeStyles((theme) => ({
 export default () => {
   const classes = useStyles();
   return (
-    <AppBar>
-      <Toolbar className={ classes.toolbar }>
-        <Link to='/'>
-          <IconButton edge='start'>
-            <HomeOutlinedIcon/>
-          </IconButton>
-        </Link>
-        <div>
-          <Link to='/about/'>
-            <IconButton>
-              <InfoOutlinedIcon/>
+    <div>
+      <AppBar>
+        <Toolbar className={ classes.toolbar }>
+          <Link to='/'>
+            <IconButton edge='start'>
+              <HomeOutlinedIcon/>
             </IconButton>
           </Link>
-          <Link to='/skills/'>
-            <IconButton>
-              <WorkOutlineOutlinedIcon/>
-            </IconButton>
-          </Link>
-          <Link to='/showcase/'>
-            <IconButton>
-              <BookOutlinedIcon/>
-            </IconButton>
-          </Link>
-        </div>
-      </Toolbar>
-    </AppBar>
+          <div>
+            <Link to='/about/'>
+              <IconButton>
+                <InfoOutlinedIcon/>
+              </IconButton>
+            </Link>
+            <Link to='/skills/'>
+              <IconButton>
+                <WorkOutlineOutlinedIcon/>
+              </IconButton>
+            </Link>
+            <Link to='/showcase/'>
+              <IconButton>
+                <BookOutlinedIcon/>
+              </IconButton>
+            </Link>
+          </div>
+        </Toolbar>
+      </AppBar>
+      <Toolbar/>
+    </div>
   )
 }
