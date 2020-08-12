@@ -3,12 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import { Link } from 'gatsby';
-
-// Import icons:
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import WorkOutlineOutlinedIcon from '@material-ui/icons/WorkOutlineOutlined';
-import BookOutlinedIcon from '@material-ui/icons/BookOutlined';
+import Button from './button.js'
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -27,25 +22,17 @@ export default () => {
       <AppBar>
         <Toolbar className={ classes.toolbar }>
           <Link to='/'>
-            <IconButton edge='start'>
-              <HomeOutlinedIcon/>
-            </IconButton>
+            <Button buttonName='home'/>
           </Link>
-          <div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr' }}>
             <Link to='/about/'>
-              <IconButton>
-                <InfoOutlinedIcon/>
-              </IconButton>
+              <Button buttonName='about'/>
             </Link>
             <Link to='/skills/'>
-              <IconButton>
-                <WorkOutlineOutlinedIcon/>
-              </IconButton>
+              <Button buttonName='showcase'/>
             </Link>
             <Link to='/showcase/'>
-              <IconButton>
-                <BookOutlinedIcon/>
-              </IconButton>
+              <Button buttonName='skills'/>
             </Link>
           </div>
         </Toolbar>
