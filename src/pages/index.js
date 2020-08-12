@@ -1,10 +1,12 @@
 import React from "react"
 import Header from '../components/header.js'
+import Footer from '../components/footer.js'
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import 'fontsource-roboto';
 import Portrait from '../images/portrait.jpg'
 import { makeStyles } from '@material-ui/core/styles';
+import Layout from '../components/layout.js'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -17,11 +19,12 @@ export default function Home() {
   const classes = useStyles();
   return (
     <div>
-      <Header/>
+      <Layout>
       <Container className={ classes.container }>
           <Typography variant='h1' gutterBottom>Hi, My name is Prasant Prasath, and I am a Full stack developer</Typography>
           <img src={ Portrait } alt='A picture of Prasant' id='portrait'></img>
       </Container>
+    </Layout>
     </div>
   )
 }
