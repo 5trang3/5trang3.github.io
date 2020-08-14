@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     height: '75%'
   },
+  h1: {
+    fontFamily: 'caveat',
+  }
 }))
 export default function Home() {
   const classes = useStyles();
@@ -24,9 +27,9 @@ export default function Home() {
     <div style={{ backgroundColor: 'rgba(0,0,0,0.8)', height: '100%'}}>
       <Layout>
           <Container className={ classes.container }>
-              <Typography variant='h1' color='secondary' id='heading' align='center'>Unleash your creativity.</Typography>
+              <Typography variant='h1' color='secondary' id='heading' align='center' className={ classes.h1 }>Unleash your creativity.</Typography>
               <Typography variant='h2' color='secondary' id='blurb' align='center'>Hi, My name is Prasant and I make ideas come alive.</Typography>
-              <Typography variant='h2' color='secondary' id='description' align='center'>I use React to build innovative and functional web apps.</Typography>
+              <Typography variant='h4' component='p' color='secondary' id='description' align='center'>I use React to build innovative and functional web apps.</Typography>
           </Container>
     </Layout>
     </div>
