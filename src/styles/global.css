@@ -1,4 +1,17 @@
-img {
-  max-width: 100%;
-  opacity: 0.6
+body {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  height: 100%
+}
+
+html {
+  height: 100%
+}
+
+#___gatsby {
+  height: 100%
+}
+
+#gatsby-focus-wrapper {
+  height: 100%
 }

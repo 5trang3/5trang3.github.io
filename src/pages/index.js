@@ -3,27 +3,31 @@ import Header from '../components/header.js'
 import Footer from '../components/footer.js'
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import 'fontsource-roboto';
 import Portrait from '../images/portrait.jpg'
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/layout.js'
+import '../styles/index.css'
 
 const useStyles = makeStyles((theme) => ({
   container: {
     display: 'grid',
-    gridTemplateColumns: '50% 50%',
-    justifyItems: 'center'
+    gridTemplateColumns: '1fr',
+    gridTemplateRows: '1fr 1fr 1fr',
+    justifyItems: 'center',
+    alignItems: 'center',
+    height: '75%'
   },
 }))
 export default function Home() {
   const classes = useStyles();
   return (
-    <div>
+    <div style={{ backgroundColor: 'rgba(0,0,0,0.8)', height: '100%'}}>
       <Layout>
-      <Container className={ classes.container }>
-          <Typography variant='h1' gutterBottom>Hi, My name is Prasant Prasath, and I am a Full stack developer</Typography>
-          <img src={ Portrait } alt='A picture of Prasant' id='portrait'></img>
-      </Container>
+          <Container className={ classes.container }>
+              <Typography variant='h1' color='secondary' id='heading' align='center'>Unleash your creativity.</Typography>
+              <Typography variant='h2' color='secondary' id='blurb' align='center'>Hi, My name is Prasant and I make ideas come alive.</Typography>
+              <Typography variant='h2' color='secondary' id='description' align='center'>I use React to build innovative and functional web apps.</Typography>
+          </Container>
     </Layout>
     </div>
   )
