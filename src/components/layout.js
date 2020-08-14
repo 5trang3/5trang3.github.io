@@ -19,9 +19,11 @@ export default ({ children }) => {
   theme = responsiveFontSizes(theme);
   return (
     <ThemeProvider theme={ theme }>
-      <Header/>
-      { children }
-      <Footer/>
+      <div id='backgroundfilm'>
+        <Header/>
+        { children }
+        <Footer/>
+      </div>
     </ThemeProvider>
   )
 }

@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const classes = useStyles();
   return (
-    <div style={{ backgroundColor: 'rgba(0,0,0,0.8)', height: '100%'}}>
       <Layout>
           <Container className={ classes.container }>
               <Typography variant='h1' color='secondary' id='heading' align='center' className={ classes.h1 }>Unleash your creativity.</Typography>
@@ -32,6 +31,5 @@ export default function Home() {
               <Typography variant='h4' component='p' color='secondary' id='description' align='center'>I use React to build innovative and functional web apps.</Typography>
           </Container>
     </Layout>
-    </div>
   )
 }
