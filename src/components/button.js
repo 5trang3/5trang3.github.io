@@ -56,7 +56,7 @@ export default ({ buttonName, align }) => {
     }
     else {
       return (
-        <IconButton>
+        <IconButton color='secondary'>
           { button }
         </IconButton>
       )
