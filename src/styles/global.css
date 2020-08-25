@@ -1,7 +1,8 @@
 body {
-  background-image: url('../images/background.jpg');
+  background-image: url('/images/background.jpg');
   background-size: cover;
-  height: 100%
+  height: 100%;
+  margin: 0
 }
 
 html {
@@ -18,5 +19,8 @@ html {
 
 #backgroundfilm {
   background-color: rgba(0,0,0,0.8);
-  height: 100%
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 8fr 1fr;
 }

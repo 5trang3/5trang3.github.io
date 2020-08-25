@@ -3,7 +3,6 @@ import Header from '../components/header.js'
 import Footer from '../components/footer.js'
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Portrait from '../images/portrait.jpg'
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/layout.js'
 import '../styles/index.css'
@@ -15,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     gridTemplateRows: '1fr 1fr 1fr',
     justifyItems: 'center',
     alignItems: 'center',
-    height: '75%'
   },
   h1: {
     fontFamily: 'caveat',
