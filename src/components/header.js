@@ -29,10 +29,10 @@ export default () => {
               <Button buttonName='about'/>
             </Link>
             <Link to='/skills/'>
-              <Button buttonName='showcase'/>
+              <Button buttonName='skills'/>
             </Link>
             <Link to='/showcase/'>
-              <Button buttonName='skills'/>
+              <Button buttonName='showcase'/>
             </Link>
           </div>
         </Toolbar>
