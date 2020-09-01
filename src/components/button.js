@@ -13,17 +13,18 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
-  button: {
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-    color: '#fff5eb'
-  }
-}))
+export default ({ buttonName, align, buttonColor, textColor }) => {
+  const useStyles = makeStyles((theme) => ({
+    button: {
+      '&:hover': {
+        backgroundColor: 'transparent',
+      },
+      color: textColor || '#fff5eb'
+    }
+  }))
 
-export default ({ buttonName, align }) => {
   let button;
+
   switch (buttonName) {
     case 'home':
       button = <HomeOutlinedIcon/>;
@@ -57,7 +58,7 @@ export default ({ buttonName, align }) => {
     }
     else {
       return (
-        <IconButton color='secondary'>
+        <IconButton color={ buttonColor || 'secondary' }>
           { button }
         </IconButton>
       )
