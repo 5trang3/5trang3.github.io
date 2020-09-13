@@ -3,7 +3,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 import '../styles/about.css';
 

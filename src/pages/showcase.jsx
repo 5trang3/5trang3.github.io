@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import ShowcaseItem from '../components/ShowcaseItem';
 import '../styles/showcase.css';
 
