@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './header.js';
-import Footer from './footer.js'
 import { createMuiTheme, ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import Header from './Header';
+import Footer from './Footer';
 
-export default ({ children }) => {
-
+const Layout = ({ children }) => {
   let theme = createMuiTheme({
     palette: {
       primary: {
@@ -18,12 +18,18 @@ export default ({ children }) => {
 
   theme = responsiveFontSizes(theme);
   return (
-    <ThemeProvider theme={ theme }>
-      <div id='backgroundfilm'>
-        <Header/>
-        { children }
-        <Footer/>
+    <ThemeProvider theme={theme}>
+      <div id="backgroundfilm">
+        <Header />
+        {children}
+        <Footer />
       </div>
     </ThemeProvider>
-  )
-}
+  );
+};
+
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default Layout;
