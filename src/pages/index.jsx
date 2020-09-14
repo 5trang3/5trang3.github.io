@@ -3,7 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
-import '../styles/index.css';
 
 const useStyles = makeStyles(() => ({
   container: {
