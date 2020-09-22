@@ -11,6 +11,7 @@ const useStyles = makeStyles(() => ({
     gridTemplateRows: '1fr 1fr 1fr',
     justifyItems: 'center',
     alignItems: 'center',
+    height: '100%',
   },
   h1: {
     fontFamily: 'caveat',
