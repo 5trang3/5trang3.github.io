@@ -19,6 +19,7 @@ export default () => {
   const classes = useStyles();
   return (
     <div>
+      <Toolbar />
       <AppBar className={classes.appbar}>
         <Toolbar className={classes.toolbar}>
           <a href="https://github.com/5trang3">

@@ -19,9 +19,11 @@ const Layout = ({ children }) => {
   theme = responsiveFontSizes(theme);
   return (
     <ThemeProvider theme={theme}>
-      <div id="backgroundfilm">
+      <div id="layoutGrid">
         <Header />
-        {children}
+        <div id="backgroundfilm">
+          {children}
+        </div>
         <Footer />
       </div>
     </ThemeProvider>
