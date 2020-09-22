@@ -7,64 +7,44 @@ import Layout from '../components/Layout';
 
 import '../styles/about.css';
 
-const useStyles = makeStyles(() => ({
+const gridStyles = makeStyles(() => ({
   container: {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gridTemplateRows: '1fr',
+    gridTemplateColumns: '40% 60%',
+    gridTemplateRows: '15% 85%',
     justifyItems: 'center',
-    alignItems: 'center',
+    alignItems: 'start',
+    height: '100%',
   },
-  paragraph: {
-    marginTop: '10px',
-    marginBottom: '10px',
+}));
+
+const headingStyles = makeStyles(() => ({
+  root: {
+    gridColumn: '1 / 3',
   },
 }));
 
 export default () => {
-  const classes = useStyles();
+  const gridClasses = gridStyles();
+  const headingClasses = headingStyles();
+  const aboutMeParagraphs = [
+    'Hi! My name is Prasant and I\'m a web developer.',
+    'I recently graduated from the University of Waterloo with a Bachelor of Mathematics, majoring in Applied Mathematics. (Yes, I love mathematics that much). During my time as a student, I was enrolled in Waterloo\'s famed co-op program, completing a total of six co-op terms (an equivalent of 24 months). Despite my plan of pursuing post-graduate Mathematics, I specifically chose to complete my co-op terms in the Tech industry as I wanted to broaden my horizons, and keep my options open for the future.',
+    'During my final two co-op terms, I worked as a web developer for the University of Waterloo. I learned the ropes on a team of seven developers and experienced every part of the development process. From sprint planning and writing quality code to testing features with QA and deploying version releases to production - and hundreds of other things in between. I even had the chance to work on a few big projects. During my first term I led a project to integrate an existing internal API with our web forms solution to prepopulate form results with student information. In my second term, I worked on our move from Drupal 7 to Drupal 8. By the end of my time there I had earned an \'Outstanding\' evaluation from my supervisor. Unexpectedly, I had fallen in love with the profession, and given my aptitude for it, I decided that I wanted to do it full-time.',
+    'Despite having spent five years in Waterloo, I was still very unwelcoming of the frigid winters and the boiling summers. So, having finished my degree, I moved back home to temperate (but also always raining) Vancouver. For the past year, I\'ve been growing my skills by building full stack web applications with MongoDB, Express, React and Node. I\'m current seeking full-time employment and I would love a role where I can continue to grow and gain experience with new technologies.',
+    'When I\'m not writing code, I enjoy playing video games and watching movies. I\'m also nuts about soccer. To get in touch with me regarding employment opportunites, or if you just want to have a chat, reach out to me at prasant.prasath@hotmail.com',
+  ];
   return (
     <Layout>
-      <Container className={classes.container}>
+      <Container className={gridClasses.container}>
+        <Typography variant="h1" component="h1" className={headingClasses.root} color="secondary">About Me</Typography>
         <img src="/images/portrait.jpg" id="portrait" alt="Prasant in Prague" />
         <div id="about">
-          <Typography
-            variant="h5"
-            component="p"
-            align="justify"
-            color="secondary"
-            className={classes.paragraph}
-          >
-            My name is Prasant Prasath. I recently graduated from the University of Waterloo with a
-            Bachelors of Mathematics, majoring in Applied Mathematics. (Yes, I love mathematics that
-            much). If I learned anything from living in Waterloo for five years, it&apos;s that East
-            Coast winters are not for me. So, Upon completion of my degree, I moved back home to
-            Vancouver, where I now live.
-          </Typography>
-          <Typography
-            variant="h5"
-            component="p"
-            align="justify"
-            color="secondary"
-            className={classes.paragraph}
-          >
-            During my time as a student, I worked as a web developer for the University of Waterloo
-            for a total of eight months. I created a module for the University that pre-populated
-            student information in web forms. I was also heavily involved in the University&apos;s
-            move from Drupal 7 to Drupal 8. I am currently seeking full time employment as a React
-            Developer.
-          </Typography>
-          <Typography
-            variant="h5"
-            component="p"
-            align="justify"
-            color="secondary"
-            className={classes.paragraph}
-          >
-            When I&apos;m not writing code, I enjoy playing video games, watching movies and playing
-            soccer. To get in touch with me regarding employment opportunites, reach out to me at
-            prasant.prasath@hotmail.com
-          </Typography>
+          {aboutMeParagraphs.map((paragraph) => (
+            <Typography variant="body1" component="p" align="justify" color="secondary" paragraph>
+              {paragraph}
+            </Typography>
+          ))}
         </div>
       </Container>
     </Layout>
