@@ -45,7 +45,7 @@ const ShowcaseItem = ({
   const chipList = chips.map((chip) => <Chip label={chip} size="small" className={classes.chip} />);
 
   return (
-    <div>
+    <div id="item-container">
       <a href={link} className="showcase-link">
         <Card className={classes.card}>
           <CardHeader title={title} className={classes.cardHeader} />

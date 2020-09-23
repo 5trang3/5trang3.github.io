@@ -5,3 +5,7 @@
 .showcase-link {
   text-decoration: none;
 }
+
+#item-container {
+  padding: 5px;
+}
