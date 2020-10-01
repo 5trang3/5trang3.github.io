@@ -2,19 +2,21 @@ import React from 'react';
 
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
 
 import '../styles/about.css';
 
 const gridStyles = makeStyles(() => ({
-  container: {
+  root: {
     display: 'grid',
     gridTemplateColumns: '40% 60%',
-    gridTemplateRows: '15% 85%',
     justifyItems: 'center',
-    alignItems: 'start',
+    alignItems: 'center',
     height: '100%',
+    paddingLeft: '20px',
+    paddingTop: '16px',
   },
 }));
 
@@ -36,16 +38,18 @@ export default () => {
   ];
   return (
     <Layout>
-      <Container className={gridClasses.container}>
-        <Typography variant="h1" component="h1" className={headingClasses.root} color="secondary">About Me</Typography>
-        <img src="/images/portrait.jpg" id="portrait" alt="Prasant in Prague" />
-        <div id="about">
-          {aboutMeParagraphs.map((paragraph) => (
-            <Typography variant="body1" component="p" align="justify" color="secondary" paragraph>
-              {paragraph}
-            </Typography>
-          ))}
-        </div>
+      <Container>
+        <Typography variant="h1" component="h1" className={headingClasses.root} color="secondary" align="center">About Me</Typography>
+        <Paper className={gridClasses.root}>
+          <img src="/images/portrait.jpg" id="portrait" alt="Prasant in Prague" />
+          <div id="about">
+            {aboutMeParagraphs.map((paragraph) => (
+              <Typography variant="body1" component="p" paragraph>
+                {paragraph}
+              </Typography>
+            ))}
+          </div>
+        </Paper>
       </Container>
     </Layout>
   );
