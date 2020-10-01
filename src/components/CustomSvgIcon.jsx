@@ -1,35 +1,30 @@
 import React from 'react';
 import SvgIcon from '@material-ui/core/SvgIcon';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+import svgIcons from '../images/svgIcons';
 
 const CustomSvgIcon = ({
-  paths, fills, viewboxWidth, viewboxHeight,
+  icon, viewboxWidth, viewboxHeight,
 }) => {
-  const svgIconStyles = makeStyles((theme) => ({
+  const svgIconStyles = makeStyles({
     root: {
-      padding: '5px',
-      '&:hover': {
-        border: `solid 2px ${theme.palette.secondary.main}`,
-        cursor: 'pointer',
-        borderRadius: '50%',
-      },
+      margin: '0 12px 0 0',
     },
-  }));
+  });
   const svgIconClasses = svgIconStyles();
   const viewBox = `0 0 ${viewboxWidth} ${viewboxHeight}`;
   return (
-    <SvgIcon viewBox={viewBox} fontSize="large" className={svgIconClasses.root}>
-      {paths.map((path, index) => (
-        <path d={path} fill={fills[index]} />
+    <SvgIcon viewBox={viewBox} fontSize="default" className={svgIconClasses.root}>
+      {svgIcons[icon].paths.map((path, index) => (
+        <path d={path} fill={svgIcons[icon].fills[index]} />
       ))}
     </SvgIcon>
   );
 };
 
 CustomSvgIcon.propTypes = {
-  paths: PropTypes.arrayOf(PropTypes.string).isRequired,
-  fills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  icon: PropTypes.string.isRequired,
   viewboxWidth: PropTypes.string,
   viewboxHeight: PropTypes.string,
 };
