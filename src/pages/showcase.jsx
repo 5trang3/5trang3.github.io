@@ -50,14 +50,13 @@ const showcaseData = [
 ];
 
 export default () => {
-  const containerStyles = makeStyles({
+  const headerStyles = makeStyles({
     root: {
-      gridTemplateColumns: '33% 33% 33%',
-      gridTemplateRows: '50% 50%',
-      display: 'grid',
+      fontFamily: 'caveat',
+      textDecoration: 'underline',
     },
   });
-  const containerClasses = containerStyles();
+  const headerClasses = headerStyles();
   const showcaseItems = showcaseData.map((item) => (
     <ShowcaseItem
       title={item.title}
@@ -71,10 +70,16 @@ export default () => {
   return (
     <Layout>
       <Container>
-        <Typography variant="h1" align="center" color="Secondary">Showcase</Typography>
-        <div id="showcase-grid">
-          {showcaseItems}
-        </div>
+        <Typography
+          variant="h1"
+          align="center"
+          color="Secondary"
+          className={headerClasses.root}
+          gutterBottom
+        >
+          Showcase
+        </Typography>
+        <div id="showcase-grid">{showcaseItems}</div>
       </Container>
     </Layout>
   );
