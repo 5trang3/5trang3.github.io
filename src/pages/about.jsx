@@ -1,24 +1,10 @@
 import React from 'react';
-
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
-
 import '../styles/about.css';
-
-const gridStyles = makeStyles(() => ({
-  root: {
-    display: 'grid',
-    gridTemplateColumns: '40% 60%',
-    justifyItems: 'center',
-    alignItems: 'center',
-    height: '100%',
-    paddingLeft: '20px',
-    paddingTop: '16px',
-  },
-}));
 
 const headingStyles = makeStyles(() => ({
   root: {
@@ -29,7 +15,6 @@ const headingStyles = makeStyles(() => ({
 }));
 
 export default () => {
-  const gridClasses = gridStyles();
   const headingClasses = headingStyles();
   const aboutMeParagraphs = [
     "Hi! My name is Prasant and I'm a web developer.",
@@ -51,16 +36,18 @@ export default () => {
         >
           About Me
         </Typography>
-        <Paper className={gridClasses.root}>
+        <div id="about-me-grid">
           <img src="/images/portrait.jpg" id="portrait" alt="Prasant in Prague" />
-          <div id="about">
-            {aboutMeParagraphs.map((paragraph) => (
-              <Typography variant="body1" component="p" paragraph>
-                {paragraph}
-              </Typography>
-            ))}
-          </div>
-        </Paper>
+          <Paper square>
+            <div id="about">
+              {aboutMeParagraphs.map((paragraph) => (
+                <Typography variant="body1" component="p" paragraph>
+                  {paragraph}
+                </Typography>
+              ))}
+            </div>
+          </Paper>
+        </div>
       </Container>
     </Layout>
   );
