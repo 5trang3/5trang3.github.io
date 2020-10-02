@@ -13,7 +13,8 @@ import Button from './CustomButton';
 
 const useStyles = makeStyles(() => ({
   card: {
-    height: '100%',
+    height: '400px',
+    width: '400px',
     display: 'grid',
     gridTemplateColumns: '80% 20%',
     gridTemplateRows: '20% 55% 25%',

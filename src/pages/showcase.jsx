@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
 import ShowcaseItem from '../components/ShowcaseItem';
@@ -51,7 +52,6 @@ const showcaseData = [
 export default () => {
   const containerStyles = makeStyles({
     root: {
-      height: '100%',
       gridTemplateColumns: '33% 33% 33%',
       gridTemplateRows: '50% 50%',
       display: 'grid',
@@ -70,8 +70,11 @@ export default () => {
   ));
   return (
     <Layout>
-      <Container className={containerClasses.root}>
-        {showcaseItems}
+      <Container>
+        <Typography variant="h1" align="center" color="Secondary">Showcase</Typography>
+        <div id="showcase-grid">
+          {showcaseItems}
+        </div>
       </Container>
     </Layout>
   );
