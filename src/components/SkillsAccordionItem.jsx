@@ -12,12 +12,10 @@ const SkillsAccordionItem = ({ skill }) => (
   <Accordion>
     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
       <CustomSvgIcon icon={skill.icon} />
-      <Typography>{ svgIcons[skill.icon].name }</Typography>
+      <Typography>{svgIcons[skill.icon].name}</Typography>
     </AccordionSummary>
     <AccordionDetails>
-      <Typography align="left">
-        { skill.description }
-      </Typography>
+      <Typography align="left">{skill.description}</Typography>
     </AccordionDetails>
   </Accordion>
 );

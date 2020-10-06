@@ -43,27 +43,33 @@ const ShowcaseItem = ({
   chips, link, title, githubLink, img, content,
 }) => {
   const classes = useStyles();
-  const chipList = chips.map((chip) => <Chip label={chip} size="small" className={classes.chip} />);
+  const chipList = chips.map((chip) => (
+    <Chip label={chip} size="small" className={classes.chip} key={`${chip}-chip`} />
+  ));
 
   return (
     <div id="item-container">
-      <a href={link} className="showcase-link">
-        <Card className={classes.card}>
-          <CardHeader title={title} className={classes.cardHeader} />
-          <CardActions className={classes.cardActions}>
-            <a href={githubLink}>
-              <Button buttonName="github" buttonColor="primary" textColor="#00578e" />
-            </a>
-          </CardActions>
-          <CardMedia image={img} className={classes.cardMedia} />
-          <CardContent className={classes.cardContent}>
-            <Typography className={classes.description} variant="body2">
-              {content}
-            </Typography>
-            <div className="chip-container">{chipList}</div>
-          </CardContent>
-        </Card>
-      </a>
+      <Card className={classes.card}>
+        <a href={link} className="showcase-link">
+          <CardHeader
+            title={title}
+            className={classes.cardHeader}
+            titleTypographyProps={{ color: 'textPrimary' }}
+          />
+        </a>
+        <CardActions className={classes.cardActions}>
+          <a href={githubLink}>
+            <Button buttonName="github" buttonColor="primary" textColor="#00578e" />
+          </a>
+        </CardActions>
+        <CardMedia image={img} className={classes.cardMedia} />
+        <CardContent className={classes.cardContent}>
+          <Typography className={classes.description} variant="body2">
+            {content}
+          </Typography>
+          <div className="chip-container">{chipList}</div>
+        </CardContent>
+      </Card>
     </div>
   );
 };

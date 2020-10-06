@@ -65,6 +65,7 @@ export default () => {
       chips={item.chips}
       githubLink={item.github}
       link={item.link}
+      key={`${item.title}-showcase-item`}
     />
   ));
   return (
@@ -73,7 +74,7 @@ export default () => {
         <Typography
           variant="h1"
           align="center"
-          color="Secondary"
+          color="secondary"
           className={headerClasses.root}
           gutterBottom
         >

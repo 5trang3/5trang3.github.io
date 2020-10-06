@@ -16,8 +16,8 @@ const CustomSvgIcon = ({
   const viewBox = `0 0 ${viewboxWidth} ${viewboxHeight}`;
   return (
     <SvgIcon viewBox={viewBox} fontSize="default" className={svgIconClasses.root}>
-      {svgIcons[icon].paths.map((path, index) => (
-        <path d={path} fill={svgIcons[icon].fills[index]} />
+      {svgIcons[icon].paths.map((pathObj, index) => (
+        <path d={pathObj.path} fill={svgIcons[icon].fills[index]} key={pathObj.index} />
       ))}
     </SvgIcon>
   );
