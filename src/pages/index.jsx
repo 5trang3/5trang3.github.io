@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import Layout from '../components/Layout';
+import CustomAlert from '../components/CustomAlert';
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -19,8 +20,10 @@ const useStyles = makeStyles(() => ({
 }));
 export default function Home() {
   const classes = useStyles();
+  const responsivityAlertMessage = 'I understand that this site is not yet completely responsive and that there may be issues at smaller screen sizes. I am working to resolve these issues ASAP. I apologize for any inconvenience caused.';
   return (
     <Layout>
+      <CustomAlert severity="info" message={responsivityAlertMessage} />
       <Container className={classes.container}>
         <Typography
           variant="h1"
