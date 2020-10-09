@@ -13,11 +13,11 @@ import Button from './CustomButton';
 
 const useStyles = makeStyles(() => ({
   card: {
-    height: '400px',
-    width: '400px',
+    height: '340px',
+    width: '340px',
     display: 'grid',
     gridTemplateColumns: '80% 20%',
-    gridTemplateRows: '20% 55% 25%',
+    gridTemplateRows: '15% 45% 40%',
   },
   cardHeader: {
     gridColumn: '1 / 2',
@@ -29,13 +29,15 @@ const useStyles = makeStyles(() => ({
     gridColumn: '1 / 3',
   },
   cardContent: {
-    gridColumn: '1 / 3',
-    display: 'grid',
-    gridTemplateRows: '66% 33%',
-    rowGap: '10px',
+    padding: '10px 15px',
+    gridColumn: '1/3',
+    '&:last-child': {
+      paddingBottom: '10px',
+    },
   },
   chip: {
     marginRight: '5px',
+    marginBottom: '5px',
   },
 }));
 
@@ -54,7 +56,7 @@ const ShowcaseItem = ({
           <CardHeader
             title={title}
             className={classes.cardHeader}
-            titleTypographyProps={{ color: 'textPrimary' }}
+            titleTypographyProps={{ color: 'textPrimary', variant: 'h6' }}
           />
         </a>
         <CardActions className={classes.cardActions}>
@@ -64,7 +66,7 @@ const ShowcaseItem = ({
         </CardActions>
         <CardMedia image={img} className={classes.cardMedia} />
         <CardContent className={classes.cardContent}>
-          <Typography className={classes.description} variant="body2">
+          <Typography className={classes.description} variant="body2" paragraph>
             {content}
           </Typography>
           <div className="chip-container">{chipList}</div>
