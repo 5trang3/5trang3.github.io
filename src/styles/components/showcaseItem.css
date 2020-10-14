@@ -8,6 +8,10 @@
   align-self: center;
 }
 
+.showcase-link:hover {
+  text-decoration: underline;
+}
+
 #item-container {
   padding: 5px;
 }
